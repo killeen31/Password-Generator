@@ -25,6 +25,12 @@ function generatePassword() {
     validCharacters += lower;
   }
   console.log("valid characters = ", validCharacters);
+  
+  includeUpper = confirm("okay to include Upper case characters in password");
+  if (includeUpper) {
+    validCharacters += upper;
+  }
+  console.log("valid characters = ", validCharacters) 
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -35,6 +41,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
+
 
 }
 
