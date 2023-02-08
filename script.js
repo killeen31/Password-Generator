@@ -31,6 +31,12 @@ function generatePassword() {
     validCharacters += upper;
   }
   console.log("valid characters = ", validCharacters) 
+
+  includeNumber = confirm("okay to include number case characters in password");
+  if (includeNumber) {
+    validCharacters += number;
+  }
+  console.log("valid characters = ", validCharacters)
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
