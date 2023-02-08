@@ -3,16 +3,17 @@ let lower = "abcdefghijklmnopqrstuvwxyz";
 let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let number = "1234567890";
 let special = "!@#$%^*(){}[]:;'";
-let includeLower = false;
-let includeUpper = false;
-let includeNumber = false;
-let includeSpecial = false;
-let passwordLength = 0;
+
 
 
 
 function generatePassword() {
   let validCharacters = "";
+  let includeLower = false;
+let includeUpper = false;
+let includeNumber = false;
+let includeSpecial = false;
+let passwordLength = 0;
   console.log("I am here");
   passwordLength = prompt("enter password length between 8 and 128");
   passwordLength = parseInt(passwordLength);
@@ -44,6 +45,14 @@ function generatePassword() {
     validCharacters += special;
   }
   console.log("valid characters = ", validCharacters)
+
+  if (includeLower === false &&
+    includeUpper === false &&
+    includeNumber === false &&
+    includeSpecial === false ){
+      alert("at least one character type should be slected");
+      generatePassword();
+    }
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
